@@ -11,8 +11,9 @@ import { RouterModule } from "@angular/router";
 import { ROUTES } from "./app.routes";
 // Peticiones http
 import { HttpClientModule } from "@angular/common/http";
-import { NoimagePipe } from './pipes/noimage.pipe';
-import { TarjetasComponent } from './components/tarjetas/tarjetas.component';
+import { NoimagePipe } from "./pipes/noimage.pipe";
+import { TarjetasComponent } from "./components/tarjetas/tarjetas.component";
+import { LoadingComponent } from "./components/shared/loading/loading.component";
 // Services
 
 @NgModule({
@@ -23,7 +24,8 @@ import { TarjetasComponent } from './components/tarjetas/tarjetas.component';
     ArtistaComponent,
     NavbarComponent,
     NoimagePipe,
-    TarjetasComponent
+    TarjetasComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
