@@ -12,6 +12,7 @@ import { ROUTES } from "./app.routes";
 // Peticiones http
 import { HttpClientModule } from "@angular/common/http";
 import { NoimagePipe } from './pipes/noimage.pipe';
+import { TarjetasComponent } from './components/tarjetas/tarjetas.component';
 // Services
 
 @NgModule({
@@ -21,7 +22,8 @@ import { NoimagePipe } from './pipes/noimage.pipe';
     SearchComponent,
     ArtistaComponent,
     NavbarComponent,
-    NoimagePipe
+    NoimagePipe,
+    TarjetasComponent
   ],
   imports: [
     BrowserModule,
