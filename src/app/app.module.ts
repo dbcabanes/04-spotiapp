@@ -11,6 +11,7 @@ import { RouterModule } from "@angular/router";
 import { ROUTES } from "./app.routes";
 // Peticiones http
 import { HttpClientModule } from "@angular/common/http";
+import { NoimagePipe } from './pipes/noimage.pipe';
 // Services
 
 @NgModule({
@@ -19,7 +20,8 @@ import { HttpClientModule } from "@angular/common/http";
     HomeComponent,
     SearchComponent,
     ArtistaComponent,
-    NavbarComponent
+    NavbarComponent,
+    NoimagePipe
   ],
   imports: [
     BrowserModule,
