@@ -9,8 +9,12 @@ import { SptifyService } from "../../services/sptify.service";
   styles: []
 })
 export class HomeComponent {
+  nuevasCanciones: any[] = [];
   constructor(private spotify: SptifyService) {
-    this.spotify.getNewReleases();
+    this.spotify.getNewReleases().subscribe((data: any) => {
+      console.log(data.albums.items);
+      this.nuevasCanciones = data.albums.items;
+    });
   }
 
   // Aquí esta la logica del ejecicio 1

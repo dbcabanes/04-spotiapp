@@ -13,12 +13,23 @@ export class SptifyService {
       Authorization:
         "Bearer BQBdnKL2x9olyjFO5Fj9QTQ1-nM9Dx1cfCKeAC3CrHZKBRZ7Nc7wx3WHcDEld5tXg8HGogAaBZtMcuEHivo"
     });
-    this.http
-      .get("https://api.spotify.com/v1/browse/new-releases?limit=5", {
+    return this.http.get(
+      "https://api.spotify.com/v1/browse/new-releases?limit=20",
+      {
         headers
-      })
-      .subscribe(data => {
-        console.log(data);
-      });
+      }
+    );
+  }
+  getArtista(termino: string) {
+    const headers = new HttpHeaders({
+      Authorization:
+        "Bearer BQBdnKL2x9olyjFO5Fj9QTQ1-nM9Dx1cfCKeAC3CrHZKBRZ7Nc7wx3WHcDEld5tXg8HGogAaBZtMcuEHivo"
+    });
+    return this.http.get(
+      `https://api.spotify.com/v1/search?q=${termino}&type=artist&limit=15`,
+      {
+        headers
+      }
+    );
   }
 }
