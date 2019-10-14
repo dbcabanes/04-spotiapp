@@ -13,6 +13,7 @@ export class HomeComponent {
   loading: boolean;
   constructor(private spotify: SptifyService) {
     this.loading = true;
+
     this.spotify.getNewReleases().subscribe((data: any) => {
       //console.log(data);
       this.nuevasCanciones = data;
