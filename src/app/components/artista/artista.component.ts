@@ -10,10 +10,12 @@ import { SptifyService } from "../../services/sptify.service";
 })
 export class ArtistaComponent {
   artista: any = {};
+  topTracks: any[] = [];
   loadingArtist = true;
   constructor(private router: ActivatedRoute, private sptify: SptifyService) {
     this.router.params.subscribe(params => {
       this.getArtista(params["id"]);
+      this.getTopTracks(params["id"]);
     });
   }
   getArtista(id: string) {
@@ -22,6 +24,12 @@ export class ArtistaComponent {
       this.artista = artista;
       this.loadingArtist = false;
       console.log(artista);
+    });
+  }
+  getTopTracks(id: string) {
+    this.sptify.getTopTracks(id).subscribe(topTracks => {
+      console.log(topTracks);
+      this.topTracks = topTracks;
     });
   }
 }

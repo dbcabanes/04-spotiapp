@@ -11,11 +11,13 @@ import { RouterModule } from "@angular/router";
 import { ROUTES } from "./app.routes";
 // Peticiones http
 import { HttpClientModule } from "@angular/common/http";
-import { NoimagePipe } from "./pipes/noimage.pipe";
 import { TarjetasComponent } from "./components/tarjetas/tarjetas.component";
 import { LoadingComponent } from "./components/shared/loading/loading.component";
 // Services
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
+//Pipes
+import { DomseguroPipe } from "./pipes/domseguro.pipe";
+import { NoimagePipe } from "./pipes/noimage.pipe";
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
     NavbarComponent,
     NoimagePipe,
     TarjetasComponent,
-    LoadingComponent
+    LoadingComponent,
+    DomseguroPipe
   ],
   imports: [
     FontAwesomeModule,

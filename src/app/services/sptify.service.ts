@@ -35,4 +35,9 @@ export class SptifyService {
     return this.getQuery(`artists/${id}`);
     //.pipe(map(data => data["artists"].items))
   }
+  getTopTracks(id: string) {
+    return this.getQuery(`artists/${id}/toptracks?country=us`).pipe(
+      map(data => data["tracks"])
+    );
+  }
 }
