@@ -15,6 +15,7 @@ import { NoimagePipe } from "./pipes/noimage.pipe";
 import { TarjetasComponent } from "./components/tarjetas/tarjetas.component";
 import { LoadingComponent } from "./components/shared/loading/loading.component";
 // Services
+import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { LoadingComponent } from "./components/shared/loading/loading.component"
     LoadingComponent
   ],
   imports: [
+    FontAwesomeModule,
     BrowserModule,
     HttpClientModule, //Peticiones http
     RouterModule.forRoot(ROUTES, { useHash: true })
