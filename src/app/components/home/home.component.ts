@@ -11,14 +11,25 @@ import { SptifyService } from "../../services/sptify.service";
 export class HomeComponent {
   nuevasCanciones: any[] = [];
   loading: boolean;
+  error: boolean;
+  msnError: string;
   constructor(private spotify: SptifyService) {
     this.loading = true;
+    this.error = false;
+    this.msnError;
 
-    this.spotify.getNewReleases().subscribe((data: any) => {
-      //console.log(data);
-      this.nuevasCanciones = data;
-      this.loading = false;
-    });
+    this.spotify.getNewReleases().subscribe(
+      (data: any) => {
+        //console.log(data);
+        this.nuevasCanciones = data;
+        this.loading = false;
+      },
+      errorServicio => {
+        this.loading = false;
+        this.error = true;
+        this.msnError = errorServicio.error.error.message;
+      }
+    );
   }
 
   // Aquí esta la logica del ejecicio 1
