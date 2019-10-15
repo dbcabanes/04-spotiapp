@@ -1,0 +1,14 @@
+<!--Ejercicio 1 comentado, esto recupera una lista de paises dela pagina       
+    https://restcountries.eu/rest/v2/lang/es
+ 
+    <ul>
+    <li *ngFor="let pais of paises">
+        {{ pais.name }} - {{ pais.population | number }}
+    </li>
+</ul> -->
+<app-loading *ngIf="loading"></app-loading>
+<div class="alert alert-danger animated fadeIn" *ngIf="error">
+    <h3>Error</h3>
+    <p>{{ msnError }}</p>
+</div>
+<app-tarjetas [items]="nuevasCanciones"></app-tarjetas>
